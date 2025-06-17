@@ -1,6 +1,19 @@
 // The Corner Coffeeshop - Custom JavaScript
 document.addEventListener('DOMContentLoaded', async function() {
     
+    // Show loading state
+    const menuContainer = document.querySelector('#menu .row.g-4');
+    if (menuContainer) {
+        menuContainer.innerHTML = `
+            <div class="col-12">
+                <div class="loading-spinner">
+                    <div class="spinner-border-custom"></div>
+                    <span class="ms-3">Loading menu...</span>
+                </div>
+            </div>
+        `;
+    }
+
     // Initialize data loading
     try {
         // Load menu and contact data
@@ -83,7 +96,22 @@ document.addEventListener('DOMContentLoaded', async function() {
         
     } catch (error) {
         console.error('Error loading data:', error);
-        // Fallback to existing static content if data loading fails
+        
+        // Show error state
+        if (menuContainer) {
+            menuContainer.innerHTML = `
+                <div class="col-12">
+                    <div class="error-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h5>Unable to load menu data</h5>
+                        <p>Please check your connection and try refreshing the page.</p>
+                        <button class="btn btn-outline-light" onclick="location.reload()">
+                            <i class="fas fa-refresh me-2"></i>Retry
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
     }
     
     // Navbar scroll effect

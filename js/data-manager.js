@@ -99,7 +99,16 @@ function createMenuItemHTML(item) {
                     <h5 class="card-title fw-bold">${item.name}</h5>
                     <p class="card-text">${item.description}</p>
                     <span class="price fw-bold text-primary">${dataManager.formatPrice(item.price)}</span>
-                    ${!item.available ? '<div class="mt-2"><span class="badge bg-warning">Currently Unavailable</span></div>' : ''}
+                    ${!item.available ? 
+                        '<div class="mt-2"><span class="badge bg-warning">Currently Unavailable</span></div>' : 
+                        `<div class="mt-3">
+                            <button class="btn btn-primary add-to-cart-btn" 
+                                    data-item-id="${item.id}" 
+                                    data-item='${JSON.stringify(item).replace(/'/g, "&apos;")}'>
+                                <i class="fas fa-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>`
+                    }
                 </div>
             </div>
         </div>

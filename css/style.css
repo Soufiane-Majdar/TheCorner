@@ -548,6 +548,82 @@ html {
     }
 }
 
+/* Loading Spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: var(--cream-white);
+}
+
+.spinner-border-custom {
+    width: 3rem;
+    height: 3rem;
+    border: 0.3em solid rgba(249, 249, 240, 0.3);
+    border-top: 0.3em solid var(--accent-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error State */
+.error-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--cream-white);
+}
+
+.error-state i {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+
+/* Cart Styles */
+.cart-badge {
+    font-size: 0.75rem;
+    min-width: 1.2rem;
+    height: 1.2rem;
+}
+
+.cart-item {
+    transition: var(--transition);
+}
+
+.cart-item:hover {
+    background-color: var(--cream-white);
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Notification Styles */
+.notification-enter {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* Retro Pattern Overlay */
 .retro-pattern {
     background-image: 
