@@ -49,8 +49,12 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
+    background: linear-gradient(90deg, var(--accent-gold), var(--cream-white));
     border-radius: 2px;
+}
+
+.menu-section .section-title::after {
+    background: linear-gradient(90deg, var(--accent-gold), var(--cream-white));
 }
 
 /* Navigation Styles */
@@ -219,7 +223,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Menu Section */
 .menu-section {
-    background: var(--cream-white);
+    background: var(--primary-green);
+    color: var(--cream-white);
     padding: 5rem 0;
 }
 
@@ -228,11 +233,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    background: var(--cream-white);
+    color: var(--text-dark);
+    border: 3px solid var(--cream-white);
 }
 
 .menu-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(20, 106, 44, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-gold);
 }
 
 .card-img-wrapper {
@@ -269,17 +278,17 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* About Section */
 .about-section {
-    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-    color: var(--cream-white);
+    background: var(--cream-white);
+    color: var(--text-dark);
     padding: 5rem 0;
 }
 
 .about-section .section-title {
-    color: var(--cream-white);
+    color: var(--primary-green);
 }
 
 .about-section .section-title::after {
-    background: linear-gradient(90deg, var(--accent-gold), var(--cream-white));
+    background: linear-gradient(90deg, var(--primary-green), var(--accent-gold));
 }
 
 .about-images img {
@@ -325,7 +334,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Footer */
 .footer-section {
-    background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+    background: var(--primary-green);
     color: var(--cream-white);
 }
 
