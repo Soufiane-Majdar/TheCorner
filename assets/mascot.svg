@@ -1,147 +1,92 @@
-<svg width="300" height="400" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+<svg width="300" height="350" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f9f9f0;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#e8e8d8;stop-opacity:1" />
-    </linearGradient>
-    
-    <linearGradient id="coffeeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
-    </linearGradient>
-    
-    <linearGradient id="burgerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
-    </linearGradient>
-    
     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.2)"/>
     </filter>
   </defs>
   
-  <!-- Body (Box Shape) -->
-  <rect x="75" y="100" width="150" height="180" rx="15" ry="15" 
-        fill="url(#boxGradient)" 
+  <!-- Head (Box Shape) -->
+  <rect x="90" y="40" width="120" height="90" rx="8" ry="8" 
+        fill="#f9f9f0" 
         stroke="#146a2c" 
-        stroke-width="3" 
+        stroke-width="6" 
         filter="url(#shadow)"/>
   
-  <!-- Coffee Shop Logo on Body -->
-  <circle cx="150" cy="170" r="35" fill="#146a2c" opacity="0.8"/>
-  <text x="150" y="175" font-family="Arial Black, sans-serif" font-size="14" 
-        fill="#f9f9f0" text-anchor="middle" font-weight="bold">COFFEE</text>
-  
-  <!-- Head (Smaller Box) -->
-  <rect x="100" y="50" width="100" height="80" rx="10" ry="10" 
-        fill="url(#boxGradient)" 
+  <!-- Body (Rounded Rectangle) -->
+  <rect x="100" y="130" width="100" height="120" rx="15" ry="15" 
+        fill="#f9f9f0" 
         stroke="#146a2c" 
-        stroke-width="3" 
+        stroke-width="6" 
         filter="url(#shadow)"/>
-  
-  <!-- Eyes -->
-  <circle cx="125" cy="80" r="8" fill="#146a2c"/>
-  <circle cx="175" cy="80" r="8" fill="#146a2c"/>
-  <circle cx="127" cy="78" r="3" fill="#f9f9f0"/>
-  <circle cx="177" cy="78" r="3" fill="#f9f9f0"/>
-  
-  <!-- Smile -->
-  <path d="M 135 100 Q 150 115 165 100" stroke="#146a2c" stroke-width="3" 
-        fill="none" stroke-linecap="round"/>
   
   <!-- Left Arm holding Burger -->
-  <rect x="40" y="140" width="50" height="15" rx="7" ry="7" 
-        fill="url(#boxGradient)" 
+  <rect x="45" y="160" width="60" height="15" rx="7" ry="7" 
+        fill="#f9f9f0" 
         stroke="#146a2c" 
-        stroke-width="2"
-        transform="rotate(-15 65 147)"/>
+        stroke-width="4"
+        transform="rotate(-10 75 167)"/>
   
   <!-- Burger in Left Hand -->
-  <g transform="translate(15, 125) rotate(-15)">
+  <g transform="translate(15, 140) rotate(-10)">
     <!-- Top Bun -->
-    <ellipse cx="25" cy="20" rx="20" ry="8" fill="#D2691E"/>
-    <ellipse cx="25" cy="18" rx="18" ry="6" fill="#DAA520"/>
-    
+    <ellipse cx="25" cy="20" rx="18" ry="8" fill="#D2B48C" stroke="#146a2c" stroke-width="2"/>
     <!-- Lettuce -->
-    <ellipse cx="25" cy="25" rx="19" ry="3" fill="#228B22"/>
-    
+    <ellipse cx="25" cy="25" rx="17" ry="3" fill="#228B22"/>
     <!-- Meat -->
-    <ellipse cx="25" cy="28" rx="18" ry="4" fill="#8B4513"/>
-    
+    <ellipse cx="25" cy="28" rx="16" ry="4" fill="#8B4513"/>
     <!-- Bottom Bun -->
-    <ellipse cx="25" cy="33" rx="20" ry="8" fill="#D2691E"/>
-    
-    <!-- Sesame Seeds -->
-    <circle cx="20" cy="18" r="1.5" fill="#F5DEB3"/>
-    <circle cx="30" cy="16" r="1.5" fill="#F5DEB3"/>
-    <circle cx="25" cy="14" r="1.5" fill="#F5DEB3"/>
+    <ellipse cx="25" cy="33" rx="18" ry="7" fill="#D2B48C" stroke="#146a2c" stroke-width="2"/>
   </g>
   
-  <!-- Right Arm holding Coffee -->
-  <rect x="210" y="140" width="50" height="15" rx="7" ry="7" 
-        fill="url(#boxGradient)" 
+  <!-- Right Arm holding Coffee -->  
+  <rect x="195" y="160" width="60" height="15" rx="7" ry="7" 
+        fill="#f9f9f0" 
         stroke="#146a2c" 
-        stroke-width="2"
-        transform="rotate(15 235 147)"/>
+        stroke-width="4"
+        transform="rotate(10 225 167)"/>
   
   <!-- Coffee Cup in Right Hand -->
-  <g transform="translate(245, 125) rotate(15)">
+  <g transform="translate(240, 140) rotate(10)">
     <!-- Cup -->
     <rect x="15" y="20" width="20" height="25" rx="2" ry="2" 
-          fill="url(#coffeeGradient)" stroke="#4A4A4A" stroke-width="1"/>
-    
+          fill="#f9f9f0" stroke="#146a2c" stroke-width="3"/>
     <!-- Coffee -->
-    <rect x="16" y="21" width="18" height="20" rx="1" ry="1" fill="#2F1B14"/>
-    
-    <!-- Foam -->
-    <ellipse cx="25" cy="21" rx="9" ry="2" fill="#F5F5DC"/>
-    
+    <rect x="17" y="22" width="16" height="18" rx="1" ry="1" fill="#2F1B14"/>
     <!-- Handle -->
-    <path d="M 35 28 Q 42 28 42 35 Q 42 42 35 42" stroke="#4A4A4A" 
-          stroke-width="2" fill="none"/>
-    
+    <path d="M 35 28 Q 42 28 42 35 Q 42 42 35 42" stroke="#146a2c" 
+          stroke-width="3" fill="none"/>
     <!-- Steam -->
-    <path d="M 22 18 Q 23 12 21 8" stroke="#E6E6FA" stroke-width="1.5" 
-          fill="none" opacity="0.7" stroke-linecap="round"/>
-    <path d="M 25 18 Q 26 10 24 6" stroke="#E6E6FA" stroke-width="1.5" 
-          fill="none" opacity="0.7" stroke-linecap="round"/>
-    <path d="M 28 18 Q 29 12 27 8" stroke="#E6E6FA" stroke-width="1.5" 
-          fill="none" opacity="0.7" stroke-linecap="round"/>
+    <path d="M 22 18 Q 23 12 21 8" stroke="#146a2c" stroke-width="2" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 25 18 Q 26 10 24 6" stroke="#146a2c" stroke-width="2" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 28 18 Q 29 12 27 8" stroke="#146a2c" stroke-width="2" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
   </g>
   
   <!-- Legs -->
-  <rect x="110" y="270" width="20" height="60" rx="10" ry="10" 
-        fill="url(#boxGradient)" 
+  <rect x="120" y="250" width="20" height="50" rx="10" ry="10" 
+        fill="#f9f9f0" 
         stroke="#146a2c" 
-        stroke-width="2"/>
-  <rect x="170" y="270" width="20" height="60" rx="10" ry="10" 
-        fill="url(#boxGradient)" 
+        stroke-width="4"/>
+  <rect x="160" y="250" width="20" height="50" rx="10" ry="10" 
+        fill="#f9f9f0" 
         stroke="#146a2c" 
-        stroke-width="2"/>
+        stroke-width="4"/>
   
   <!-- Shoes -->
-  <ellipse cx="120" cy="340" rx="15" ry="8" fill="#2F2F2F" filter="url(#shadow)"/>
-  <ellipse cx="180" cy="340" rx="15" ry="8" fill="#2F2F2F" filter="url(#shadow)"/>
+  <ellipse cx="130" cy="310" rx="18" ry="10" fill="#146a2c" filter="url(#shadow)"/>
+  <ellipse cx="170" cy="310" rx="18" ry="10" fill="#146a2c" filter="url(#shadow)"/>
   
   <!-- Shoe Details -->
-  <ellipse cx="120" cy="338" rx="12" ry="5" fill="#4A4A4A"/>
-  <ellipse cx="180" cy="338" rx="12" ry="5" fill="#4A4A4A"/>
+  <ellipse cx="130" cy="308" rx="14" ry="6" fill="#f9f9f0"/>
+  <ellipse cx="170" cy="308" rx="14" ry="6" fill="#f9f9f0"/>
+  <circle cx="125" cy="308" r="3" fill="#146a2c"/>
+  <circle cx="135" cy="308" r="3" fill="#146a2c"/>
+  <circle cx="165" cy="308" r="3" fill="#146a2c"/>
+  <circle cx="175" cy="308" r="3" fill="#146a2c"/>
   
-  <!-- Chef Hat (Optional retro touch) -->
-  <ellipse cx="150" cy="45" rx="35" ry="12" fill="#f9f9f0" 
-           stroke="#146a2c" stroke-width="2" opacity="0.9"/>
-  <rect x="130" y="35" width="40" height="20" fill="#f9f9f0" 
-        stroke="#146a2c" stroke-width="2"/>
-  <ellipse cx="150" cy="35" rx="20" ry="8" fill="#f9f9f0" 
-           stroke="#146a2c" stroke-width="2"/>
-  
-  <!-- Retro Shine Effect -->
-  <ellipse cx="130" cy="120" rx="20" ry="30" fill="rgba(255,255,255,0.3)" 
-           transform="rotate(-15 130 120)"/>
-  
-  <!-- Text Banner -->
-  <rect x="50" y="360" width="200" height="30" rx="15" ry="15" 
-        fill="#146a2c" filter="url(#shadow)"/>
-  <text x="150" y="380" font-family="Arial Black, sans-serif" font-size="16" 
-        fill="#f9f9f0" text-anchor="middle" font-weight="bold">FRESH • BOLD • TASTY</text>
+  <!-- Shoe Laces -->
+  <path d="M 125 305 L 135 305" stroke="#146a2c" stroke-width="2"/>
+  <path d="M 165 305 L 175 305" stroke="#146a2c" stroke-width="2"/>
 </svg>

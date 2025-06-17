@@ -29,8 +29,10 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6, .navbar-brand {
-    font-family: 'Fredoka One', 'Bowlby One', cursive;
-    font-weight: 400;
+    font-family: 'Roboto', 'Arial Black', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .section-title {
@@ -53,7 +55,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Navigation Styles */
 .navbar {
-    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    background: var(--primary-green);
     padding: 1rem 0;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -108,7 +110,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    background: var(--primary-green);
     color: var(--cream-white);
     min-height: 100vh;
     position: relative;
