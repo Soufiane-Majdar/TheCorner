@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     padding: 1rem 0;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    z-index: 1030;
 }
 
 .navbar.scrolled {
@@ -119,6 +120,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     min-height: 100vh;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .hero-section::before {
@@ -442,13 +444,23 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
     .hero-section {
-        padding: 2rem 0;
+        padding: 6rem 0 2rem 0;
         text-align: center;
+        min-height: auto;
     }
     
     .hero-title {
         font-size: 2.5rem;
+        margin-top: 2rem;
     }
     
     .hero-tagline {
@@ -466,7 +478,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     }
     
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .section-title::after {
@@ -476,6 +488,16 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     
     .menu-card {
         margin-bottom: 2rem;
+    }
+    
+    .menu-filters .filter-btn {
+        margin-bottom: 0.5rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .menu-search .form-control {
+        font-size: 0.9rem;
     }
     
     .about-section .row {
@@ -489,27 +511,103 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     .contact-section .col-lg-4 {
         margin-top: 2rem;
     }
+    
+    .modal-dialog {
+        margin: 1rem;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .cart-item img {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+    
+    .quantity-controls {
+        margin: 1rem 0;
+    }
 }
 
 @media (max-width: 576px) {
+    .navbar {
+        padding: 0.3rem 0;
+    }
+    
     .navbar-brand {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .hero-section {
+        padding: 5rem 0 1rem 0;
+        min-height: 70vh;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-top: 1rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.1rem;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .display-4 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .menu-icon i {
         font-size: 2rem !important;
+    }
+    
+    .menu-filters {
+        text-align: center;
+    }
+    
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        margin: 0.2rem;
+    }
+    
+    .menu-search .input-group {
+        flex-direction: column;
+    }
+    
+    .menu-search .form-control {
+        border-radius: 25px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .menu-search .btn-outline-light {
+        border-radius: 25px;
+        width: 100px;
+        align-self: center;
+    }
+    
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .cart-item {
+        padding: 1rem;
+    }
+    
+    .cart-item .quantity-controls {
+        justify-content: center;
+        width: 100%;
     }
 }
 

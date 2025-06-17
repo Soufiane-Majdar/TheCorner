@@ -9,12 +9,27 @@ class CartManager {
 
     async init() {
         try {
+            // Wait for dataManager to be available
+            if (typeof dataManager === 'undefined') {
+                setTimeout(() => this.init(), 100);
+                return;
+            }
+            
             const orderData = await dataManager.fetchData('/data/orders.json');
             this.orderSettings = orderData.order_settings;
             this.createCartModal();
             this.bindEvents();
         } catch (error) {
             console.error('Error initializing cart:', error);
+            // Set default settings if loading fails
+            this.orderSettings = {
+                tax_rate: 0.08,
+                delivery_fee: 2.99,
+                free_delivery_minimum: 25.00,
+                estimated_prep_time: "15-20 minutes"
+            };
+            this.createCartModal();
+            this.bindEvents();
         }
     }
 
