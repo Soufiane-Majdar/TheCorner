@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Corner Coffeeshop - Fresh Brew. Bold Taste.</title>
+    <meta name="description" content="Experience the best coffee in town at The Corner Coffeeshop. Fresh brews, bold taste, and a retro atmosphere that feels like home.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Chunk Five -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Bowlby+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-coffee me-2"></i>THE CORNER COFFEESHOP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2">
+                    <div class="hero-content text-center text-lg-start">
+                        <h1 class="display-2 fw-bold mb-3 hero-title">THE CORNER COFFEESHOP</h1>
+                        <p class="lead mb-4 hero-tagline">Fresh Brew. Bold Taste.</p>
+                        <p class="mb-4">Experience the perfect blend of retro charm and premium coffee in the heart of the city.</p>
+                        <div class="hero-buttons">
+                            <a href="#menu" class="btn btn-primary btn-lg me-3 pulse-animation">Order Now</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Visit Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1 text-center">
+                    <div class="mascot-container">
+                        <img src="assets/mascot.svg" alt="Corner Coffeeshop Mascot" class="img-fluid mascot-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights Section -->
+    <section id="menu" class="menu-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-4 fw-bold">Our Signature Brews</h2>
+                    <p class="lead">Handcrafted with love, served with a smile</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Espresso -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="menu-card card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="https://pixabay.com/get/g7e15ffe9a9dd86582833c309a2a05360f3c512b7d893520cb11c67203479b90483d2ef9ac4c4da6425ca8fecb3e94be4082a0182d8340a5e8c473847670da730_1280.jpg" class="card-img-top" alt="Espresso">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="menu-icon mb-3">
+                                <i class="fas fa-mug-hot fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Classic Espresso</h5>
+                            <p class="card-text">Rich, bold, and full-bodied. Our signature espresso blend that wakes up your senses.</p>
+                            <span class="price fw-bold text-primary">$3.50</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cappuccino -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="menu-card card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="https://pixabay.com/get/ge1516e2e5d924aa114afa73b7b0169e4ad23e83bbf592dec7cd78040088b0b4fbb1049c377dec515f6b856451c7cc0ed960cd8af2aa36a7fe320b397149c6545_1280.jpg" class="card-img-top" alt="Cappuccino">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="menu-icon mb-3">
+                                <i class="fas fa-coffee fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Creamy Cappuccino</h5>
+                            <p class="card-text">Perfect balance of espresso, steamed milk, and velvety foam. A classic comfort drink.</p>
+                            <span class="price fw-bold text-primary">$4.25</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sandwiches -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="menu-card card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="https://pixabay.com/get/g92ba615694e3e66c7611186cbefa7b2ad12f76f6e8173364b37308e2e43ceb50dd764e4ad92ab654e247fef288e2851718829d5942d8741f4e4ea79469ec2ad7_1280.jpg" class="card-img-top" alt="Gourmet Sandwich">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="menu-icon mb-3">
+                                <i class="fas fa-bread-slice fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Gourmet Sandwiches</h5>
+                            <p class="card-text">Fresh ingredients, artisan bread, and bold flavors. Perfect pair for your coffee.</p>
+                            <span class="price fw-bold text-primary">$8.95</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastries -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="menu-card card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="https://pixabay.com/get/g025989646854ca3195bc4aae350b86660128a86fe7eb1317b62a59664e43ee8eadf181d3ebf0b7f724cbe6c2c4aa679bd52092e67116654ba9fdfc5614684365_1280.jpg" class="card-img-top" alt="Fresh Pastries">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="menu-icon mb-3">
+                                <i class="fas fa-cookie-bite fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Fresh Pastries</h5>
+                            <p class="card-text">Baked daily with love. From croissants to muffins, we have the perfect sweet treat.</p>
+                            <span class="price fw-bold text-primary">$4.50</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Latte -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="menu-card card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="https://pixabay.com/get/gcd9be1a671ff7f25f3ce965fd06c017e4e27e375420ddd018f38c96274380533e7eac229dab057e9f173cd34c57975b45d460f0f9917a770245a1d759ccf7264_1280.jpg" class="card-img-top" alt="Specialty Latte">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="menu-icon mb-3">
+                                <i class="fas fa-heart fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Specialty Lattes</h5>
+                            <p class="card-text">Crafted with premium ingredients and artistic flair. Each cup is a masterpiece.</p>
+                            <span class="price fw-bold text-primary">$5.75</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cold Brew -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="menu-card card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper">
+                            <img src="https://pixabay.com/get/g830c35112a498e4aa043ba4891655da7a281804d697b423d5fd3735e4e9e6b7e7e48f41bebd3b5c6e94567e56aa55904ab700ffe199e8eb21d174a07a58fee93_1280.jpg" class="card-img-top" alt="Cold Brew">
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="menu-icon mb-3">
+                                <i class="fas fa-glass-martini fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Cold Brew</h5>
+                            <p class="card-text">Smooth, refreshing, and perfectly chilled. The ultimate summer coffee experience.</p>
+                            <span class="price fw-bold text-primary">$4.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="section-title display-4 fw-bold mb-4">Our Story</h2>
+                        <p class="lead mb-4">Welcome to The Corner Coffeeshop, where every cup tells a story and every moment feels like home.</p>
+                        <p class="mb-4">Founded in 2018, we started with a simple dream: to create a space where quality coffee meets genuine hospitality. Inspired by the classic American diners of the 1950s, we've crafted an atmosphere that celebrates the golden age of coffee culture while serving the finest brews of today.</p>
+                        <p class="mb-4">Our master roasters work tirelessly to source the finest beans from around the world, ensuring every cup delivers the perfect balance of flavor, aroma, and satisfaction. From our signature espresso blends to our artisanal pastries, everything is crafted with passion and attention to detail.</p>
+                        <div class="about-stats row g-3">
+                            <div class="col-4 text-center">
+                                <div class="stat-number fw-bold text-primary">5+</div>
+                                <div class="stat-label">Years Serving</div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="stat-number fw-bold text-primary">10K+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="stat-number fw-bold text-primary">15+</div>
+                                <div class="stat-label">Coffee Varieties</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-images">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <img src="https://pixabay.com/get/g5135c606e36b795459f6773ae8f39639eaa6df9dfc8a88c0b0211e1e0cf74303a3cbf3ee873698b2fe6f85e2cca7c37bee2373c5becd4d8950591534bf5a9425_1280.jpg" class="img-fluid rounded shadow-sm" alt="Coffee Shop Interior">
+                            </div>
+                            <div class="col-6">
+                                <img src="https://pixabay.com/get/geb46a268e9c6be21966cc682a0dcfac9373d26711f6f3f48cc97b4a3169bce801ef55807a4ec32bae450c543729ebd6c25aa7a6eb68a6f1a55b587a2e340a1ff_1280.jpg" class="img-fluid rounded shadow-sm" alt="Cozy Coffee Corner">
+                            </div>
+                            <div class="col-6">
+                                <img src="https://pixabay.com/get/g355edab6dd3c205f94ff09e5f0e084a18074d22ca4c26c341397eed2fea6d6526d17121d89c20d2d560abfe71c11b1ecc9e5b78a753b65a71251a0ee204fc907_1280.jpg" class="img-fluid rounded shadow-sm" alt="Coffee Shop Atmosphere">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title display-4 fw-bold">Visit Us Today</h2>
+                    <p class="lead">Find us at the corner where great coffee meets great company</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.492484899745!2d-73.98824368459394!3d40.75663857932686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2sus!4v1639680047456!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 10px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-card card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold mb-4">Get In Touch</h5>
+                                
+                                <div class="contact-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-map-marker-alt fa-lg text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Address</h6>
+                                        <p class="mb-0">123 Coffee Corner Street<br>Downtown District, NY 10001</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-phone fa-lg text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Phone</h6>
+                                        <p class="mb-0">(555) 123-COFFEE<br>(555) 123-2633</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item d-flex align-items-start mb-3">
+                                    <i class="fas fa-envelope fa-lg text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Email</h6>
+                                        <p class="mb-0">hello@cornercoffeeshop.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item d-flex align-items-start mb-4">
+                                    <i class="fas fa-clock fa-lg text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Hours</h6>
+                                        <p class="mb-0">
+                                            Mon-Fri: 6:00 AM - 8:00 PM<br>
+                                            Sat-Sun: 7:00 AM - 9:00 PM
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <a href="tel:(555)123-2633" class="btn btn-primary">Call Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5 class="fw-bold mb-2">THE CORNER COFFEESHOP</h5>
+                        <p class="mb-0">Fresh Brew. Bold Taste. Timeless Experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <h6 class="fw-bold mb-3">Follow Us</h6>
+                        <a href="https://instagram.com/cornercoffeeshop" class="social-link me-3" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <a href="https://facebook.com/cornercoffeeshop" class="social-link me-3" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="https://tiktok.com/@cornercoffeeshop" class="social-link" target="_blank" rel="noopener">
+                            <i class="fab fa-tiktok fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 The Corner Coffeeshop. All rights reserved. Made with <i class="fas fa-heart text-danger"></i> and lots of coffee.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
