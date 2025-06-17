@@ -1,0 +1,51 @@
+{
+  "business_info": {
+    "name": "THE CORNER COFFEESHOP",
+    "tagline": "Fresh Brew. Bold Taste.",
+    "description": "Experience the perfect blend of retro charm and premium coffee in the heart of the city.",
+    "established": "2018"
+  },
+  "contact": {
+    "address": {
+      "street": "123 Coffee Corner Street",
+      "city": "Downtown District",
+      "state": "NY",
+      "zip": "10001",
+      "full": "123 Coffee Corner Street, Downtown District, NY 10001"
+    },
+    "phone": {
+      "display": "(555) 123-COFFEE",
+      "number": "(555) 123-2633"
+    },
+    "email": "hello@cornercoffeeshop.com"
+  },
+  "hours": {
+    "weekdays": {
+      "days": "Mon-Fri",
+      "hours": "6:00 AM - 8:00 PM"
+    },
+    "weekends": {
+      "days": "Sat-Sun", 
+      "hours": "7:00 AM - 9:00 PM"
+    }
+  },
+  "social_media": {
+    "instagram": {
+      "url": "https://instagram.com/cornercoffeeshop",
+      "handle": "@cornercoffeeshop"
+    },
+    "facebook": {
+      "url": "https://facebook.com/cornercoffeeshop",
+      "handle": "cornercoffeeshop"
+    },
+    "tiktok": {
+      "url": "https://tiktok.com/@cornercoffeeshop",
+      "handle": "@cornercoffeeshop"
+    }
+  },
+  "stats": {
+    "years_serving": "5+",
+    "happy_customers": "10,000+",
+    "coffee_varieties": "15+"
+  }
+}

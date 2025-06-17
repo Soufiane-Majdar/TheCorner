@@ -1,5 +1,90 @@
 // The Corner Coffeeshop - Custom JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    
+    // Initialize data loading
+    try {
+        // Load menu and contact data
+        const [menuData, contactData] = await Promise.all([
+            dataManager.loadMenu(),
+            dataManager.loadContact()
+        ]);
+        
+        // Update contact information
+        updateContactInfo(contactData);
+        
+        // Render featured menu items
+        const featuredItems = dataManager.getFeaturedItems(menuData);
+        renderMenu(featuredItems);
+        
+        // Add category filters
+        const menuSection = document.querySelector('#menu .container .row:first-child');
+        if (menuSection) {
+            const filtersHTML = createCategoryFilters(menuData.categories);
+            menuSection.insertAdjacentHTML('afterend', `<div class="row"><div class="col-12">${filtersHTML}</div></div>`);
+            
+            // Add filter event listeners
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    const filteredItems = category === 'all' ? 
+                        menuData.menu_items : 
+                        dataManager.filterMenuByCategory(menuData, category);
+                    
+                    renderMenu(filteredItems);
+                    
+                    // Update active filter
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        }
+        
+        // Add search functionality
+        const searchHTML = `
+            <div class="menu-search text-center mb-4">
+                <div class="input-group justify-content-center">
+                    <input type="text" class="form-control" id="menuSearch" 
+                           placeholder="Search menu items..." style="max-width: 300px;">
+                    <button class="btn btn-outline-light" type="button" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        const filtersContainer = document.querySelector('.menu-filters');
+        if (filtersContainer) {
+            filtersContainer.insertAdjacentHTML('afterend', searchHTML);
+            
+            const searchInput = document.getElementById('menuSearch');
+            const searchBtn = document.getElementById('searchBtn');
+            
+            function performSearch() {
+                const query = searchInput.value.trim();
+                const results = query ? 
+                    dataManager.searchMenu(menuData, query) : 
+                    dataManager.getFeaturedItems(menuData);
+                renderMenu(results);
+                
+                // Reset filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.category === 'all');
+                });
+            }
+            
+            searchInput.addEventListener('input', performSearch);
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') performSearch();
+            });
+        }
+        
+        console.log('Menu and contact data loaded successfully!');
+        
+    } catch (error) {
+        console.error('Error loading data:', error);
+        // Fallback to existing static content if data loading fails
+    }
     
     // Navbar scroll effect
     const navbar = document.getElementById('mainNav');

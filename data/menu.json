@@ -1,0 +1,104 @@
+{
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "description": "Premium coffee blends"
+    },
+    {
+      "id": "food",
+      "name": "Food",
+      "description": "Fresh sandwiches and pastries"
+    }
+  ],
+  "menu_items": [
+    {
+      "id": 1,
+      "name": "Classic Espresso",
+      "category": "coffee",
+      "price": 3.50,
+      "description": "Rich, bold, and full-bodied. Our signature espresso blend that wakes up your senses.",
+      "image": "https://pixabay.com/get/g7e15ffe9a9dd86582833c309a2a05360f3c512b7d893520cb11c67203479b90483d2ef9ac4c4da6425ca8fecb3e94be4082a0182d8340a5e8c473847670da730_1280.jpg",
+      "icon": "fas fa-mug-hot",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Creamy Cappuccino",
+      "category": "coffee",
+      "price": 4.25,
+      "description": "Perfect balance of espresso, steamed milk, and velvety foam. A classic comfort drink.",
+      "image": "https://pixabay.com/get/ge1516e2e5d924aa114afa73b7b0169e4ad23e83bbf592dec7cd78040088b0b4fbb1049c377dec515f6b856451c7cc0ed960cd8af2aa36a7fe320b397149c6545_1280.jpg",
+      "icon": "fas fa-coffee",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Specialty Lattes",
+      "category": "coffee",
+      "price": 5.75,
+      "description": "Crafted with premium ingredients and artistic flair. Each cup is a masterpiece.",
+      "image": "https://pixabay.com/get/gcd9be1a671ff7f25f3ce965fd06c017e4e27e375420ddd018f38c96274380533e7eac229dab057e9f173cd34c57975b45d460f0f9917a770245a1d759ccf7264_1280.jpg",
+      "icon": "fas fa-heart",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "Cold Brew",
+      "category": "coffee",
+      "price": 4.95,
+      "description": "Smooth, refreshing, and perfectly chilled. The ultimate summer coffee experience.",
+      "image": "https://pixabay.com/get/g830c35112a498e4aa043ba4891655da7a281804d697b423d5fd3735e4e9e6b7e7e48f41bebd3b5c6e94567e56aa55904ab700ffe199e8eb21d174a07a58fee93_1280.jpg",
+      "icon": "fas fa-glass-martini",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "Gourmet Sandwiches",
+      "category": "food",
+      "price": 8.95,
+      "description": "Fresh ingredients, artisan bread, and bold flavors. Perfect pair for your coffee.",
+      "image": "https://pixabay.com/get/g92ba615694e3e66c7611186cbefa7b2ad12f76f6e8173364b37308e2e43ceb50dd764e4ad92ab654e247fef288e2851718829d5942d8741f4e4ea79469ec2ad7_1280.jpg",
+      "icon": "fas fa-bread-slice",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "Fresh Pastries",
+      "category": "food",
+      "price": 4.50,
+      "description": "Baked daily with love. From croissants to muffins, we have the perfect sweet treat.",
+      "image": "https://pixabay.com/get/g025989646854ca3195bc4aae350b86660128128a86fe7eb1317b62a59664e43ee8eadf181d3ebf0b7f724cbe6c2c4aa679bd52092e67116654ba9fdfc5614684365_1280.jpg",
+      "icon": "fas fa-cookie-bite",
+      "featured": true,
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "Americano",
+      "category": "coffee",
+      "price": 3.75,
+      "description": "Bold espresso shots with hot water. Simple, strong, and satisfying.",
+      "image": "https://pixabay.com/get/g7e15ffe9a9dd86582833c309a2a05360f3c512b7d893520cb11c67203479b90483d2ef9ac4c4da6425ca8fecb3e94be4082a0182d8340a5e8c473847670da730_1280.jpg",
+      "icon": "fas fa-mug-hot",
+      "featured": false,
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "Mocha",
+      "category": "coffee",
+      "price": 5.25,
+      "description": "Rich espresso with steamed milk and chocolate syrup. Sweet indulgence in every sip.",
+      "image": "https://pixabay.com/get/gcd9be1a671ff7f25f3ce965fd06c017e4e27e375420ddd018f38c96274380533e7eac229dab057e9f173cd34c57975b45d460f0f9917a770245a1d759ccf7264_1280.jpg",
+      "icon": "fas fa-heart",
+      "featured": false,
+      "available": true
+    }
+  ]
+}
