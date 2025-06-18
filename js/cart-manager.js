@@ -4,6 +4,12 @@ class CartManager {
         this.cart = JSON.parse(localStorage.getItem('coffeeShopCart')) || [];
         this.orderSettings = null;
         this.cartModal = null;
+        this.deliveryDetails = JSON.parse(localStorage.getItem('deliveryDetails')) || {
+            address: '',
+            zone: '',
+            paymentMethod: '',
+            notes: ''
+        };
         this.init();
     }
 
@@ -15,7 +21,7 @@ class CartManager {
                 return;
             }
             
-            const orderData = await dataManager.fetchData('/data/orders.json');
+            const orderData = await dataManager.fetchData(`${dataManager.baseURL}/data/orders.json`);
             this.orderSettings = orderData.order_settings;
             this.createCartModal();
             this.bindEvents();

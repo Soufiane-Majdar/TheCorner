@@ -20,8 +20,59 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Load scripts in correct order -->
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Toast notifications -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body"></div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <div class="position-fixed bottom-0 end-0 mb-4 me-4" style="z-index: 10;">
+        <button class="btn btn-primary rounded-circle p-3 shadow-lg" id="cartButton" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">
+                0
+            </span>
+        </button>
+    </div>
+
+    <!-- Custom Scripts -->
     <script src="js/data-manager.js"></script>
+    <script>
+        // Initialize DataManager with proper error handling
+        window.addEventListener('load', function() {
+            if (typeof DataManager === 'undefined') {
+                console.error('DataManager not loaded!');
+                return;
+            }
+            
+            // Create the data manager instance
+            window.dataManager = new DataManager();
+            
+            // Add a reload button to the error message if it exists
+            const errorMessage = document.querySelector('.alert-danger');
+            if (errorMessage) {
+                errorMessage.innerHTML += `
+                    <hr>
+                    <button class="btn btn-outline-danger" onclick="window.location.reload()">
+                        <i class="fas fa-sync-alt me-2"></i>Refresh Page
+                    </button>
+                `;
+            }
+        });
+    </script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/script.js"></script>
     <script>
         // Initialize the DataManager instance
         const dataManager = new DataManager();
@@ -104,7 +155,7 @@
                             </div>
                             <h5 class="card-title fw-bold">Classic Espresso</h5>
                             <p class="card-text">Rich, bold, and full-bodied. Our signature espresso blend that wakes up your senses.</p>
-                            <span class="price fw-bold text-primary">$3.50</span>
+                            <span class="price fw-bold text-primary">3.50</span>
                         </div>
                     </div>
                 </div>
@@ -121,7 +172,7 @@
                             </div>
                             <h5 class="card-title fw-bold">Creamy Cappuccino</h5>
                             <p class="card-text">Perfect balance of espresso, steamed milk, and velvety foam. A classic comfort drink.</p>
-                            <span class="price fw-bold text-primary">$4.25</span>
+                            <span class="price fw-bold text-primary">4.25</span>
                         </div>
                     </div>
                 </div>
@@ -138,7 +189,7 @@
                             </div>
                             <h5 class="card-title fw-bold">Gourmet Sandwiches</h5>
                             <p class="card-text">Fresh ingredients, artisan bread, and bold flavors. Perfect pair for your coffee.</p>
-                            <span class="price fw-bold text-primary">$8.95</span>
+                            <span class="price fw-bold text-primary">8.95</span>
                         </div>
                     </div>
                 </div>
@@ -155,7 +206,7 @@
                             </div>
                             <h5 class="card-title fw-bold">Fresh Pastries</h5>
                             <p class="card-text">Baked daily with love. From croissants to muffins, we have the perfect sweet treat.</p>
-                            <span class="price fw-bold text-primary">$4.50</span>
+                            <span class="price fw-bold text-primary">4.50</span>
                         </div>
                     </div>
                 </div>
@@ -172,7 +223,7 @@
                             </div>
                             <h5 class="card-title fw-bold">Specialty Lattes</h5>
                             <p class="card-text">Crafted with premium ingredients and artistic flair. Each cup is a masterpiece.</p>
-                            <span class="price fw-bold text-primary">$5.75</span>
+                            <span class="price fw-bold text-primary">5.75</span>
                         </div>
                     </div>
                 </div>
@@ -189,7 +240,7 @@
                             </div>
                             <h5 class="card-title fw-bold">Cold Brew</h5>
                             <p class="card-text">Smooth, refreshing, and perfectly chilled. The ultimate summer coffee experience.</p>
-                            <span class="price fw-bold text-primary">$4.95</span>
+                            <span class="price fw-bold text-primary">4.95</span>
                         </div>
                     </div>
                 </div>

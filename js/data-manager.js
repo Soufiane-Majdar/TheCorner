@@ -2,19 +2,12 @@
 class DataManager {
     constructor() {
         this.cache = new Map();
-        // Get the base URL for the current environment
         this.baseURL = this.getBaseURL();
     }
 
     getBaseURL() {
-        const currentURL = window.location.href;
-        // If we're on GitHub Pages, use relative paths
-        if (currentURL.includes('github.io')) {
-            const repoName = currentURL.split('/').slice(-2)[0];
-            return `/${repoName}`;
-        }
-        // For local development, use relative paths
-        return '';
+        // Always use relative paths
+        return '.';
     }
 
     // Generic AJAX request method
@@ -26,29 +19,34 @@ class DataManager {
             return this.cache.get(cacheKey);
         }
 
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    ...options.headers
-                },
-                ...options
-            });
+        // Retry mechanism
+        let retries = 3;
+        while (retries > 0) {
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...options.headers
+                    },
+                    ...options
+                });
 
-            if (!response.ok) {
-                throw new Error(`Unable to load data from ${url}. Status: ${response.status}`);
-            }
+                if (!response.ok) {
+                    throw new Error(`Unable to load data from ${url}. Status: ${response.status}`);
+                }
 
-            const data = await response.json();
-            
-            // Cache the response for 5 minutes
-            this.cache.set(cacheKey, data);
-            setTimeout(() => this.cache.delete(cacheKey), 5 * 60 * 1000);
-            
-            return data;
-        } catch (error) {
-            console.error('Error fetching data:', error);
+                const data = await response.json();
+                
+                // Cache the response for 5 minutes
+                this.cache.set(cacheKey, data);
+                setTimeout(() => this.cache.delete(cacheKey), 5 * 60 * 1000);
+                
+                return data;
+            } catch (error) {
+                retries--;
+                if (retries === 0) {
+                    console.error('Error fetching data:', error);
             const menuContainer = document.querySelector('#menu .row.g-4');
             if (menuContainer) {
                 menuContainer.innerHTML = `
@@ -71,7 +69,7 @@ class DataManager {
     // Load menu data
     async loadMenu() {
         try {
-            return await this.fetchData('data/menu.json');
+            return await this.fetchData(`${this.baseURL}/data/menu.json`);
         } catch (error) {
             console.error('Error loading menu:', error);
             throw new Error('Unable to load menu data. Make sure you\'re running the site through a web server.');
@@ -81,7 +79,7 @@ class DataManager {
     // Load contact information
     async loadContact() {
         try {
-            return await this.fetchData('data/contact.json');
+            return await this.fetchData(`${this.baseURL}/data/contact.json`);
         } catch (error) {
             console.error('Error loading contact:', error);
             throw new Error('Unable to load contact data. Make sure you\'re running the site through a web server.');

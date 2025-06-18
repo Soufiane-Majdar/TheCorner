@@ -414,32 +414,205 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: translateY(-3px);
 }
 
+/* Cart Steps */
+.cart-steps {
+    padding: 20px 0;
+    position: relative;
+}
+
+.cart-steps .step {
+    text-align: center;
+    width: 80px;
+    z-index: 1;
+}
+
+.cart-steps .step-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--cream-white);
+    border: 2px solid var(--text-light);
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.cart-steps .step.active .step-icon {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    color: white;
+}
+
+.cart-steps .step.completed .step-icon {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: white;
+}
+
+.cart-steps .step-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.cart-steps .step.active .step-label {
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.cart-steps .progress-bar {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    background: var(--text-light);
+    width: 80%;
+    z-index: 0;
+}
+
+/* Cart Steps Content */
+.cart-step {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-step.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Payment Methods */
+.payment-method {
+    border: 2px solid var(--cream-white);
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method:hover {
+    border-color: var(--primary-green);
+}
+
+.payment-method.selected {
+    border-color: var(--primary-green);
+    background: rgba(20, 106, 44, 0.05);
+}
+
+.payment-method i {
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    border: 1px solid var(--cream-white);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.cart-item:hover {
+    box-shadow: var(--shadow);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: var(--cream-white);
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.quantity-control button:hover {
+    background: var(--primary-green);
+    color: white;
+}
+
+/* Cart Summary */
+.cart-summary {
+    background: var(--cream-white);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-row.total {
+    border-top: 2px solid var(--text-light);
+    padding-top: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 /* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
+@keyframes fadeIn {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
         transform: translateY(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
         opacity: 1;
-        transform: translateX(0);
     }
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+.cart-step.active {
+    animation: slideIn 0.3s ease forwards;
+}
+
+/* Toast Notifications */
+.toast {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.toast-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Form Styling */
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(20, 106, 44, 0.25);
+}
+
+.form-control::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
 }
 
 /* Responsive Design */
