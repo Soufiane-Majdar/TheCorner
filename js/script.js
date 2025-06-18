@@ -1,4 +1,73 @@
 // The Corner Coffeeshop - Custom JavaScript
+
+// Create menu item HTML
+function createMenuItemHTML(item) {
+    return `
+        <div class="col-md-6 col-lg-4 menu-item" data-category="${item.category}" data-id="${item.id}">
+            <div class="menu-card card h-100 border-0 shadow-sm">
+                <div class="card-img-wrapper">
+                    <img src="${item.image}" class="card-img-top" alt="${item.name}" loading="lazy" onerror="this.src='assets/mascot.svg'">
+                </div>
+                <div class="card-body text-center">
+                    <div class="menu-icon mb-3">
+                        <i class="${item.icon} fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="card-title fw-bold">${item.name}</h5>
+                    <p class="card-text">${item.description}</p>
+                    <p class="price">$${item.price.toFixed(2)}</p>
+                    ${item.available ? 
+                        `<button class="btn btn-primary add-to-cart" data-id="${item.id}">
+                            Add to Cart <i class="fas fa-cart-plus ms-2"></i>
+                        </button>` : 
+                        '<span class="badge bg-secondary">Currently Unavailable</span>'
+                    }
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function renderMenu(items, container) {
+    const menuContainer = container || document.querySelector('#menu .row.g-4');
+    if (!menuContainer) return;
+
+    if (!items || items.length === 0) {
+        menuContainer.innerHTML = `
+            <div class="col-12 text-center">
+                <div class="alert alert-info">
+                    No menu items available for this category.
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    menuContainer.innerHTML = items.map(createMenuItemHTML).join('');
+    
+    // Trigger animations for newly loaded items
+    const menuCards = menuContainer.querySelectorAll('.menu-card');
+    menuCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('loading');
+        }, index * 100);
+    });
+}
+
+// Create filter buttons
+function createCategoryFilters(categories, activeCategory = 'all') {
+    const filtersHTML = `
+        <div class="menu-filters text-center mb-4">
+            <button class="btn btn-outline-light me-2 mb-2 filter-btn ${activeCategory === 'all' ? 'active' : ''}" 
+                    data-category="all">All Items</button>
+            ${categories.map(category => `
+                <button class="btn btn-outline-light me-2 mb-2 filter-btn ${activeCategory === category.id ? 'active' : ''}"
+                        data-category="${category.id}">${category.name}</button>
+            `).join('')}
+        </div>
+    `;
+    return filtersHTML;
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     
     // Show loading state

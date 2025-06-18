@@ -2,7 +2,19 @@
 class DataManager {
     constructor() {
         this.cache = new Map();
-        this.baseURL = window.location.origin;
+        // Get the base URL for the current environment
+        this.baseURL = this.getBaseURL();
+    }
+
+    getBaseURL() {
+        const currentURL = window.location.href;
+        // If we're on GitHub Pages, use relative paths
+        if (currentURL.includes('github.io')) {
+            const repoName = currentURL.split('/').slice(-2)[0];
+            return `/${repoName}`;
+        }
+        // For local development, use relative paths
+        return '';
     }
 
     // Generic AJAX request method
@@ -25,7 +37,7 @@ class DataManager {
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`Unable to load data from ${url}. Status: ${response.status}`);
             }
 
             const data = await response.json();
@@ -37,18 +49,43 @@ class DataManager {
             return data;
         } catch (error) {
             console.error('Error fetching data:', error);
+            const menuContainer = document.querySelector('#menu .row.g-4');
+            if (menuContainer) {
+                menuContainer.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger text-center">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            Unable to load menu data.<br>
+                            <small>Details: ${error.message}</small><br>
+                            <button class="btn btn-outline-danger mt-3" onclick="location.reload()">
+                                <i class="fas fa-sync-alt me-2"></i>Refresh Page
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
             throw error;
         }
     }
 
     // Load menu data
     async loadMenu() {
-        return await this.fetchData('/data/menu.json');
+        try {
+            return await this.fetchData('data/menu.json');
+        } catch (error) {
+            console.error('Error loading menu:', error);
+            throw new Error('Unable to load menu data. Make sure you\'re running the site through a web server.');
+        }
     }
 
     // Load contact information
     async loadContact() {
-        return await this.fetchData('/data/contact.json');
+        try {
+            return await this.fetchData('data/contact.json');
+        } catch (error) {
+            console.error('Error loading contact:', error);
+            throw new Error('Unable to load contact data. Make sure you\'re running the site through a web server.');
+        }
     }
 
     // Filter menu items by category
